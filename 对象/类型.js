@@ -1,0 +1,9 @@
+/*js的类型
+也叫语言类型六中基本类型
+string、
+number、
+blooean、
+object、
+null、
+undefined
+*/
