@@ -113,4 +113,31 @@ var ypxs = new Child('尹鹏孝',
 ypxs.setSex('men')
 
 console.log(ypxs)
-console.log(ypxs.sayName())
+console.log(ypxs.sayName());
+
+
+
+//原型继承的优化
+
+
+function Foo(name) {
+    this.name = name;
+}
+
+Foo.prototype.getName = function() {
+    return this.name;
+}
+
+function Bar(name) {
+    Foo.call(this, name);
+}
+
+//主要是在此处修改了new Foo的方式，并且使用Object.create(obj)关联prototype;比使用new Foo.prototype方便；且也没有重新指定对象对应的构造属性constructor
+Bar.prototype = Object.create(Foo.prototype);
+Bar.prototype.getBarName = function() {
+    return this.name;
+}
+Bar.prototype.age = 18;
+var jsBar = new Bar('js');
+console.log(jsBar.getBarName());
+console.log(jsBar.age);
