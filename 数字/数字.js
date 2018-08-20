@@ -105,4 +105,18 @@ console.log(m);
 
 //?怎么样才能不影响m的值呢？建议使用m.slice()//不带参数的slice是复制当前的数组的一个副本但不会改变当前数组；
 foos(m.slice());
-console.log(m)
+console.log(m);
+
+var mg = "1";
+var obj = {
+    mg: "2",
+    getMg: function() {
+        //console.log(this.mg);
+        //this.prototype.mg = "3";
+        return this.mg;
+    }
+}
+console.log(obj.getMg());
+var bg = obj.getMg;
+console.log(bg.bind(obj)());
+console.log((new obj.getMg()).mg);
