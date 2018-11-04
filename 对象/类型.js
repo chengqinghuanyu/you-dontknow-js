@@ -34,3 +34,19 @@ console.log(null === undefined)
     RegExp,
     Error
     */
+
+// 判断一个属性是否存在于对象之中
+let objs = {
+    a: '123'
+}
+Object.prototype.hasOwnProperty.call(objs, "a");
+
+
+// 遍历对象的key的方法：
+// 1、in
+// 2、hasOwnprototype
+// 3、keys
+// 4、getprototypeName
+// 、区别是：in会遍历原型链上的key,hasOwnpeortotype只会遍历当前，keys是遍历可枚举，getprototypeName是遍历所有的可枚举
+// Object.keys(..) 会返回一个数组,包含所有可枚举属性,Object.getOwnPropertyNames(..) 会返回一个数组,包含所有属性,无论它们是否可枚举。
+// in 和 hasOwnProperty(..) 的区别在于是否查找 [[Prototype]] 链,然而,Object.keys(..) 和 Object.getOwnPropertyNames(..) 都只会查找对象直接包含的属性。
