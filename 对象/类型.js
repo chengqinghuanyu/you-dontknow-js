@@ -35,11 +35,6 @@ console.log(null === undefined)
     Error
     */
 
-// 判断一个属性是否存在于对象之中
-let objs = {
-    a: '123'
-}
-Object.prototype.hasOwnProperty.call(objs, "a");
 
 
 // 遍历对象的key的方法：
